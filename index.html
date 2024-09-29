@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Genuine Technology and Research Limited (GTR)</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px 15px 90px;
+      background-color: #f5f5f5;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .nav-center {
+      display: flex;
+      justify-content: center;
+      flex-grow: 1;
+      margin-left: 120px;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .nav-center ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin-left: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: red;
+    }
+
+    .signup-btn {
+      padding: 8px 15px;
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .signup-btn:hover {
+      background-color: #333;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .cross-icon {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .nav-links-mobile {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background: #f5f5f5;
+      padding: 10px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links-mobile.active {
+      display: flex;
+    }
+
+    .nav-links-mobile ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .nav-links-mobile ul li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 6px 5px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-links-mobile ul li a:hover {
+      background-color: #e0e0e0;
+    }
+
+    .nav-links-mobile.active .signup-btn {
+      padding: 5px 10px;
+      font-size: 0.9rem;
+      color: white;
+      background-color: black;
+    }
+
+
+    @media (max-width: 768px) {
+      .navbar {
+        justify-content: space-between;
+        padding: 15px 20px;
+      }
+
+      .nav-center,
+      .nav-right {
+        display: none;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+
+      .cross-icon {
+        display: none;
+      }
+
+      .menu-icon.active {
+        display: none;
+      }
+
+      .cross-icon.active {
+        display: block;
+      }
+
+      .nav-links-mobile ul {
+        gap: 5px;
+      }
+
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+      <div class="logo">CIRCLE</div>
+      <nav class="nav-center">
+        <ul>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">About Us</a></li>
+        </ul>
+      </nav>
+      <nav class="nav-right">
+        <ul>
+          <li><a href="#">Customer Login</a></li>
+          <li><a href="#" class="signup-btn">Sign Up</a></li>
+        </ul>
+      </nav>
+      <div id="menu-icon" class="menu-icon" aria-label="Toggle navigation" aria-expanded="false">☰</div>
+      <div id="cross-icon" class="cross-icon" aria-label="Toggle navigation" aria-expanded="false">✖</div>
+    </div>
+    <div id="nav-links-mobile" class="nav-links-mobile">
+      <ul>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Customer Login</a></li>
+        <li><a href="#" class="signup-btn">Sign Up</a></li>
+      </ul>
+    </div>
+  </header>
+
+
+  <script>
+    const menuIcon = document.getElementById('menu-icon');
+    const crossIcon = document.getElementById('cross-icon');
+    const navLinksMobile = document.getElementById('nav-links-mobile');
+
+    menuIcon.addEventListener('click', () => {
+      navLinksMobile.classList.toggle('active');
+      menuIcon.classList.toggle('active');
+      crossIcon.classList.toggle('active');
+    });
+
+    crossIcon.addEventListener('click', () => {
+      navLinksMobile.classList.toggle('active');
+      menuIcon.classList.toggle('active');
+      crossIcon.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
